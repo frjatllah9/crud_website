@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapus Perangkat</title>
+    <style>
+        :root {
+            --danger: #ef233c;
+            --danger-hover: #d90429;
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('pexels-photo-31432739.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Card / Form Efek Glassmorphism */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            color: var(--text-light);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .header-icon {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h3 {
+            margin: 0 0 10px;
+            font-size: 1.6em;
+            color: var(--text-light);
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Input Transparan */
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            outline: none;
+            font-size: 1em;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input[type="number"]:focus {
+            border-color: var(--danger);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 8px rgba(239, 35, 60, 0.4);
+        }
+
+        /* Menghilangkan tombol panah naik/turun pada input number */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="submit"] {
+            flex: 2;
+            background-color: var(--danger);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--danger-hover);
+            box-shadow: 0 5px 15px rgba(239, 35, 60, 0.3);
+        }
+
+        .btn-batal {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .btn-batal:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <span class="header-icon">🗑️</span>
+    <h3>Hapus Perangkat</h3>
+    <p>Masukkan ID perangkat yang ingin dihapus dari sistem.</p>
+
+    <form method="POST" action="/fakultas/hapus_proses">
+        <div class="form-group">
+            <label for="txtId">ID Perangkat</label>
+            <input name="txtId" id="txtId" type="number" placeholder="Contoh: 1" required>
+        </div>
+
+        <div class="btn-group">
+            <input type="submit" value="Hapus Sekarang">
+            <a href="menu.html" class="btn-batal">Batal</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Perangkat</title>
+    <style>
+        :root {
+            --success: #2ecc71;
+            --bg: #f8f9fa;
+            --text: #2b2d42;
+            --white: #ffffff;
+            --gray: #8d99ae;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('usk.webp') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .success-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border-top: 8px solid var(--success);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #eafaf1;
+            color: var(--success);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            margin: 0 auto 20px;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            color: var(--success);
+        }
+
+        .info-box {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .info-item {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .label {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .value {
+            color: var(--text);
+            font-weight: bold;
+        }
+
+        .btn-kembali {
+            display: inline-block;
+            background-color: var(--text);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-kembali:hover {
+            background-color: #4361ee;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-card">
+    <div class="icon-box">✓</div>
+    <h2>Perangkat Berhasil Ditambahkan!</h2>
+    <p>Data perangkat baru telah sukses didaftarkan ke dalam sistem.</p>
+
+    <div class="info-box">
+        <div class="info-item">
+            <span class="label">Nama Perangkat :</span>
+            <span class="value">{{ namaTampil }}</span>
+        </div>
+        <div class="info-item">
+            <span class="label">ID Perangkat:</span>
+            <span class="value">{{ singkatanTampil }}</span>
+        </div>
+    </div>
+
+    <a href="menu.html" class="btn-kembali">Kembali ke Menu</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 400px; text-align: center; border-top: 10px solid #f39c12; }
+        .data-box { background: #fef9f1; padding: 15px; border-radius: 10px; text-align: left; margin: 20px 0; border: 1px solid #faedda; }
+        .btn-del { background: #ef233c; color: white; padding: 12px 25px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        .btn-cancel { background: #6c757d; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block; margin-left: 10px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h3>Konfirmasi Hapus</h3>
+    <p>Apakah Anda yakin ingin menghapus data berikut?</p>
+    <div class="data-box">
+        <b>ID:</b> {{ data[0] }}<br>
+        <b>Nama:</b> {{ data[1] }}<br>
+        <b>Singkatan:</b> {{ data[2] }}
+    </div>
+
+    <!-- Tombol Hapus mengirimkan ID ke fungsi eksekusi -->
+    <form method="POST" action="/fakultas/hapus_eksekusi" style="display: inline;">
+        <input type="hidden" name="txtId" value="{{ data[0] }}">
+        <input type="submit" value="Ya, Hapus" class="btn-del">
+    </form>
+
+    <!-- LANGKAH 4: Pilihan Batal kembali ke Menu Fakultas -->
+    <a href="fakultas.html" class="btn-cancel">Batal</a>
+</div>
+</body>
+</html>

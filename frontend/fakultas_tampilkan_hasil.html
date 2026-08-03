@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Fakultas</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --bg: #f8f9fa;
+            --text: #2b2d42;
+            --white: #ffffff;
+            --gray: #8d99ae;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('usk.webp') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--primary);
+        }
+
+        .header-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h3 {
+            margin: 0 0 25px;
+            color: var(--text);
+            font-size: 1.6em;
+        }
+
+        .data-container {
+            text-align: left;
+            background: #f1f3f5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .data-row {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .data-row:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .label {
+            color: var(--gray);
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .value {
+            color: var(--text);
+            font-weight: bold;
+        }
+
+        .btn-kembali {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-kembali:hover {
+            background-color: #3f37c9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <span class="header-icon">🎓</span>
+    <h3>Informasi Fakultas</h3>
+
+    <div class="data-container">
+        <div class="data-row">
+            <span class="label">ID Fakultas</span>
+            <span class="value">{{ data[0] }}</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Nama Lengkap</span>
+            <span class="value">{{ data[1] }}</span>
+        </div>
+        <div class="data-row">
+            <span class="label">Singkatan</span>
+            <span class="value">{{ data[2] }}</span>
+        </div>
+    </div>
+
+    <a href="fakultas.html" class="btn-kembali">Kembali ke Menu</a>
+</div>
+
+</body>
+</html>

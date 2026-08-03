@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu utama</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --danger: #ef233c;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --bg: #f8f9fa;
+            --text: #2b2d42;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('pexels-photo-31432739.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            /* Hapus background: var(--white); yang lama */
+            background: rgba(255, 255, 255, 0.1); /* Putih transparan */
+            backdrop-filter: blur(9px); /* Efek blur di belakangnya */
+            -webkit-backdrop-filter: blur(9px); /* Dukungan untuk Safari */
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis transparan */
+    
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            color: white; /* Supaya teks lebih terbaca di background gelap */
+        }
+
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: white; /* Ubah ke putih agar kontras */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+}
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .menu-card {
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 15px;
+            background: var(--bg);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid transparent;
+        }
+
+        /* Variasi warna tiap kartu */
+        .tambah { color: var(--success); }
+        .tambah:hover { background: var(--success); color: white; }
+
+        .satu { color: var(--primary); }
+        .satu:hover { background: var(--primary); color: white; }
+
+        .hapus { color: var(--danger); }
+        .hapus:hover { background: var(--danger); color: white; }
+
+        .ubah { color: var(--warning); }
+        .ubah:hover { background: var(--warning); color: white; }
+
+        .kembali {
+            grid-column: span 2;
+            margin-top: 10px;
+            background: #8d99ae;
+            color: white;
+        }
+        .kembali:hover { background: #2b2d42; transform: translateY(-2px); }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .icon { font-size: 1.5em; }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Monitoring Hama pada tumbuhan Kecerdasan Buatan</h3>
+
+    <div class="menu-grid">
+        <a href="perangkat_tambah.html" class="menu-card tambah">
+            <span class="icon">➕</span>
+            <span>Tambah Perangkat</span>
+        </a>
+
+        <a href="perangkat_cari.html" class="menu-card satu">
+            <span class="icon">🔍</span>
+            <span>Cek Perangkat</span>
+        </a>
+
+        <a href="perangkat_pantau.html" class="menu-card ubah">
+            <span class="icon">🌱</span>
+            <span>Pantau Perangkat</span>
+        </a>
+
+        <a href="perangkat_hapus.html" class="menu-card hapus">
+            <span class="icon">🗑️</span>
+            <span>Hapus Perangkat</span>
+        </a>
+
+        <a href="index.html" class="menu-card kembali">
+            <span>&larr; Kembali ke Form Login</span>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

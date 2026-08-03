@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantau Perangkat</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-hover: #3f37c9;
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('pexels-photo-31432739.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Card / Form Efek Glassmorphism */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            color: var(--text-light);
+            box-sizing: border-box;
+        }
+
+        h3 {
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.6em;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* Ikon Dekoratif Header */
+        .header-icon {
+            font-size: 3em;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+
+        /* Select / Dropdown Transparan */
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            outline: none;
+            font-size: 1em;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 8px rgba(67, 97, 238, 0.4);
+        }
+
+        /* Mewarnai Opsi Dropdown Supaya Terbaca Saat Diklik */
+        select option {
+            background-color: #2b2d42;
+            color: #ffffff;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="submit"] {
+            flex: 2;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-batal {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .btn-batal:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <span class="header-icon">📊</span>
+        <h3>Pantau Perangkat</h3>
+
+        <form method="POST" action="/fakultas/ubah_form">
+            <label for="id-select">Pilih ID Perangkat:</label>
+            <select name="txtId" id="id-select" required>
+                <option value="" disabled selected>-- Pilih ID --</option>
+                {% for row in daftar_id %}
+                    <option value="{{ row[0] }}">ID: {{ row[0] }} - {{ row[1] }}</option>
+                {% endfor %}
+            </select>
+
+            <div class="btn-group">
+                <input type="submit" value="Lanjutkan" class="btn-submit">
+                <a href="menu.html" class="btn-batal">Batal</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

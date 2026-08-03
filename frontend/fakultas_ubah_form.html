@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Fakultas</title>
+    <style>
+        :root {
+            --primary: #f39c12; /* Warna Oranye untuk identitas 'Ubah' */
+            --primary-hover: #d35400;
+            --bg: #f8f9fa;
+            --text: #2b2d42;
+            --white: #ffffff;
+            --gray: #8d99ae;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('usk.webp') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+        }
+
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.6em;
+            text-align: center;
+            color: var(--text);
+            margin-bottom: 25px;
+        }
+
+        .id-badge {
+            background: #f1f3f5;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .id-value {
+            color: var(--text);
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #edf2f4;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            color: var(--text);
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(243, 156, 18, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        input[type="submit"] {
+            flex: 2;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-batal {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f8f9fa;
+            color: var(--gray);
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+
+        .btn-batal:hover {
+            background-color: #e9ecef;
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h3>✏️ Ubah Fakultas</h3>
+
+    <form method="POST" action="fakultas_ubah_proses.html">
+        <input type="hidden" name="txtId" value="{{ data[0] }}">
+
+        <div class="id-badge">
+            <span>ID Record:</span>
+            <span class="id-value"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Nama Lengkap Fakultas</label>
+            <input name="txtNama" type="text" value="" required>
+        </div>
+
+        <div class="form-group">
+            <label>Singkatan</label>
+            <input name="txtSingkatan" type="text" value="" required>
+        </div>
+
+        <div class="btn-group">
+            <input type="submit" value="Simpan Perubahan">
+            <a href="fakultas.html" class="btn-batal">Batal</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
